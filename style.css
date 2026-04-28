@@ -458,8 +458,9 @@ section {
 }
 
 .cta-box .gradient-text {
-    background: white;
-    -webkit-text-fill-color: white;
+    background: none;
+    -webkit-text-fill-color: var(--white);
+    color: var(--white);
 }
 
 .cta-box p {
@@ -533,6 +534,280 @@ section {
     font-size: 0.9rem;
 }
 
+/* Floating WhatsApp */
+.floating-wa {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.floating-wa:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.wa-tooltip {
+    position: absolute;
+    right: 75px;
+    background: white;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.floating-wa:hover .wa-tooltip {
+    opacity: 1;
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    padding: 4rem 0;
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem;
+    text-align: center;
+}
+
+.trust-item .number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.trust-item .label {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+/* Pricing */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.pricing-card {
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card.featured {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.05);
+}
+
+.pricing-card .badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-gradient);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.price {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
+}
+
+.price span {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-top: 0.5rem;
+}
+
+.price-features {
+    list-style: none;
+    margin: 2rem 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.price-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.price-features i {
+    color: var(--primary);
+    width: 18px;
+}
+
+.pricing-note {
+    margin-top: 3rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Comparison Section */
+.comparison-section {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.comparison-section h3 {
+    margin-bottom: 3rem;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.comparison-item {
+    position: relative;
+}
+
+.label-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    z-index: 5;
+    text-transform: uppercase;
+}
+
+.label-badge.before { background: #64748b; }
+.label-badge.after { background: var(--primary); }
+
+.comparison-placeholder {
+    height: 350px;
+    background: var(--bg-card);
+    border: 1px dashed var(--glass-border);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.comparison-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.comparison-placeholder:hover img {
+    transform: scale(1.05);
+}
+
+.new-design {
+    border: 1px solid var(--primary);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+/* Case Study */
+.case-card {
+    padding: 4rem;
+}
+
+.case-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.case-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.case-step strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Urgency Badge */
+.urgency-badge {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Portfolio Tag */
+.portfolio-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    z-index: 5;
+    color: var(--primary);
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -566,7 +841,12 @@ section {
     transform: translateY(0);
 }
 
-/* Responsive */
+/* Floating animation */
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
 @media (max-width: 1024px) {
     .hero-grid {
         grid-template-columns: 1fr;
@@ -598,14 +878,19 @@ section {
     .step-connector {
         display: none;
     }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .nav-cta {
+    .nav-links, .nav-cta {
         display: none;
     }
     
@@ -624,5 +909,18 @@ section {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .case-card {
+        padding: 2rem;
     }
 }
