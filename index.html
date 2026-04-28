@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwichUI | Desain yang Meningkatkan Brand Anda</title>
+    <meta name="description"
+        content="SwichUI membuat UI/UX modern, logo, dan visual digital untuk membantu bisnis Anda tampil beda. Desain digital premium untuk UMKM dan Startup.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-text">Swich<span class="accent">UI</span></span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#services">Layanan</a>
+                <a href="#portfolio">Portofolio</a>
+                <a href="#process">Proses</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1 class="fade-in">Desain yang Meningkatkan <span class="gradient-text">Brand Anda</span></h1>
+                    <p class="fade-in delay-1">Kami membuat UI/UX modern, logo, dan visual digital untuk membantu bisnis
+                        Anda tampil beda.</p>
+                    <div class="hero-btns fade-in delay-2">
+                        <a href="#contact" class="btn btn-primary">Mulai Sekarang</a>
+                        <a href="#portfolio" class="btn btn-outline">Lihat Portofolio</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in delay-3">
+                    <div class="mockup-container">
+                        <img src="assets/hero-mockup.png" alt="SwichUI Design Mockup" class="mockup-img">
+                        <div class="floating-card glass">
+                            <i data-lucide="zap" class="neon-icon"></i>
+                            <span>Pengerjaan Cepat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gradient-blob"></div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="reveal">Layanan <span class="gradient-text">Kami</span></h2>
+                    <p class="reveal">Solusi desain komprehensif yang disesuaikan untuk pertumbuhan bisnis Anda.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card glass reveal delay-1">
+                        <div class="service-icon">
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <h3>Desain UI/UX</h3>
+                        <p>Antarmuka pengguna yang intuitif dan indah yang memberikan pengalaman pengguna luar biasa.
+                        </p>
+                    </div>
+                    <div class="service-card glass reveal delay-2">
+                        <div class="service-icon">
+                            <i data-lucide="palette"></i>
+                        </div>
+                        <h3>Logo & Branding</h3>
+                        <p>Identitas unik yang menangkap esensi brand Anda dan beresonansi dengan audiens Anda.</p>
+                    </div>
+                    <div class="service-card glass reveal delay-3">
+                        <div class="service-icon">
+                            <i data-lucide="share-2"></i>
+                        </div>
+                        <h3>Desain Media Sosial</h3>
+                        <p>Visual media sosial yang menarik untuk meningkatkan kehadiran dan interaksi online Anda.</p>
+                    </div>
+                    <div class="service-card glass reveal delay-4">
+                        <div class="service-icon">
+                            <i data-lucide="utensils"></i>
+                        </div>
+                        <h3>Poster Makanan UMKM</h3>
+                        <p>Poster makanan profesional yang dirancang untuk membuat produk UMKM Anda terlihat menggoda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="reveal">Karya <span class="gradient-text">Pilihan</span></h2>
+                    <p class="reveal">Sekilas tentang bagaimana kami mengubah ide menjadi realitas digital.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item reveal">
+                        <img src="assets/portfolio-1.png" alt="Sampel Desain UI/UX">
+                        <div class="portfolio-overlay">
+                            <span>Desain UI/UX</span>
+                            <h4>Aplikasi Pengiriman Premium</h4>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal">
+                        <img src="assets/portfolio-2.png" alt="Sampel Branding">
+                        <div class="portfolio-overlay">
+                            <span>Branding</span>
+                            <h4>Identitas Startup Teknologi</h4>
+                        </div>
+                    </div>
+                    <div class="portfolio-item reveal">
+                        <img src="assets/portfolio-3.png" alt="Sampel Media Sosial">
+                        <div class="portfolio-overlay">
+                            <span>Media Sosial</span>
+                            <h4>Kampanye Burger Gourmet</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-us">
+            <div class="container">
+                <div class="why-us-content glass">
+                    <div class="why-us-text">
+                        <h2 class="reveal">Mengapa <span class="gradient-text">Memilih SwichUI?</span></h2>
+                        <ul class="why-list">
+                            <li class="reveal delay-1">
+                                <i data-lucide="check-circle" class="accent"></i>
+                                <span><strong>Modern & Estetik:</strong> Kami selalu mengikuti tren desain
+                                    terbaru.</span>
+                            </li>
+                            <li class="reveal delay-2">
+                                <i data-lucide="clock" class="accent"></i>
+                                <span><strong>Pengerjaan Cepat:</strong> Kualitas tinggi, selesai tepat waktu.</span>
+                            </li>
+                            <li class="reveal delay-3">
+                                <i data-lucide="tag" class="accent"></i>
+                                <span><strong>Terjangkau untuk UMKM:</strong> Desain premium yang sesuai dengan budget
+                                    Anda.</span>
+                            </li>
+                            <li class="reveal delay-4">
+                                <i data-lucide="award" class="accent"></i>
+                                <span><strong>Kualitas Profesional:</strong> Perhatian pada detail di setiap
+                                    piksel.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="why-us-visual reveal">
+                        <div class="stat-circle">
+                            <span class="number">100%</span>
+                            <span class="label">Kepuasan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="reveal">Proses <span class="gradient-text">Kami</span></h2>
+                    <p class="reveal">Sederhana, efisien, dan kolaboratif.</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step reveal delay-1">
+                        <div class="step-num">01</div>
+                        <h3>Konsultasi</h3>
+                        <p>Kami mendiskusikan visi dan tujuan proyek Anda untuk memastikan kesepahaman.</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step reveal delay-2">
+                        <div class="step-num">02</div>
+                        <h3>Desain & Revisi</h3>
+                        <p>Kami membuat desain dan menyempurnakannya berdasarkan masukan Anda hingga sempurna.</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step reveal delay-3">
+                        <div class="step-num">03</div>
+                        <h3>Pengiriman</h3>
+                        <p>File final dikirimkan dalam semua format yang diperlukan, siap digunakan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="reveal">Cerita <span class="gradient-text">Klien</span></h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass reveal">
+                        <p>"SwichUI mengubah identitas brand kami. Logo yang mereka desain dengan sempurna menangkap
+                            pendekatan teknologi masa depan kami."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Andi Pratama</strong>
+                                <span>Founder, TechFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass reveal delay-1">
+                        <p>"Poster makanan untuk kedai burger saya terlihat luar biasa! Saya melihat peningkatan nyata
+                            jumlah pelanggan dari Instagram."</p>
+                        <div class="testimonial-user">
+                            <div class="user-info">
+                                <strong>Siti Aminah</strong>
+                                <span>Pemilik, Burger Ria</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="cta">
+            <div class="container text-center">
+                <div class="cta-box reveal">
+                    <h2>Mari Bangun <span class="gradient-text">Brand Anda Hari Ini</span></h2>
+                    <p>Siap untuk meningkatkan kehadiran digital Anda? Mari mulai berdiskusi.</p>
+                    <a href="https://wa.me/yourlink" class="btn btn-primary btn-lg">Hubungi Kami via WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <span class="logo-text">Swich<span class="accent">UI</span></span>
+                <p>Agensi desain digital yang fokus membantu bisnis kecil dan startup untuk tampil menonjol.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Media Sosial</h4>
+                <div class="social-icons">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h4>Informasi Kontak</h4>
+                <p>Email: hello@swichui.com</p>
+                <p>WhatsApp: +62 812 3456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 SwichUI. Seluruh hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Inisialisasi Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
