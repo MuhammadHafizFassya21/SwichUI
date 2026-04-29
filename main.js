@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Reveal animations on scroll
     const revealElements = document.querySelectorAll('.reveal, .fade-in');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelector('.nav-links');
+    const navCta = document.querySelector('.nav-cta');
+    const menuToggle = document.getElementById('menuToggle');
     
     const revealOnScroll = () => {
         const triggerBottom = window.innerHeight * 0.9;
@@ -20,23 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add scroll event listener
     window.addEventListener('scroll', revealOnScroll);
 
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.padding = '1rem 0';
-            navbar.style.background = 'rgba(10, 12, 16, 0.95)';
-        } else {
-            navbar.style.padding = '1.5rem 0';
-            navbar.style.background = 'rgba(10, 12, 16, 0.8)';
-        }
-    });
+    const syncNavbarState = () => {
+        if (!navbar) return;
+        navbar.classList.toggle('is-scrolled', window.scrollY > 50);
+    };
 
-    // Mobile menu toggle (simple version for now)
-    const menuToggle = document.getElementById('menuToggle');
+    syncNavbarState();
+    window.addEventListener('scroll', syncNavbarState);
+
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            alert('Menu mobile segera hadir! Untuk saat ini, silakan gunakan tampilan desktop untuk pengalaman penuh.');
+            navLinks?.classList.toggle('open');
+            navCta?.classList.toggle('open');
+            navbar?.classList.toggle('menu-open');
         });
     }
 
@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth'
                 });
             }
+
+            navLinks?.classList.remove('open');
+            navCta?.classList.remove('open');
+            navbar?.classList.remove('menu-open');
         });
     });
 });
