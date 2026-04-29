@@ -1,5 +1,20 @@
 # Dokumentasi Akhir Proyek Website SwichUI
 
+## Deploy Gratis Milik Sendiri
+Website ini adalah static site biasa, jadi Anda tidak perlu Vercel Pro untuk redeploy. Repo ini sekarang sudah disiapkan agar bisa auto-deploy gratis lewat GitHub Pages setiap kali ada push ke branch `main`.
+
+### Opsi yang paling aman: GitHub Pages
+1. Push repo ini ke akun GitHub yang Anda miliki akses penuh.
+2. Buka `Settings > Pages` pada repo tersebut.
+3. Pada bagian `Source`, pilih `GitHub Actions`.
+4. Setelah itu, setiap push ke `main` akan memicu workflow deploy otomatis.
+
+Alamat default-nya akan berbentuk:
+`https://username.github.io/SwichUI/`
+
+### Kalau tetap mau pakai Vercel gratis
+Vercel Hobby plan masih gratis untuk project personal, termasuk deploy static site. Namun folder `.vercel/` lama di komputer ini terhubung ke project milik akun lain, jadi jangan dipakai lagi. Buat project baru di akun Vercel Anda sendiri, lalu import repo ini sebagai project baru.
+
 Dokumen ini menyajikan kesimpulan lengkap mengenai website **SwichUI**, sebuah landing page premium untuk agensi desain digital yang berfokus pada startup dan UMKM.
 
 ## 🌟 Ringkasan Proyek
