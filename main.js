@@ -40,6 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    document.querySelectorAll('.pricing-card .btn[data-service]').forEach(button => {
+        const serviceName = button.getAttribute('data-service');
+        if (!serviceName) return;
+
+        const message = `Halo SwichUI, saya ingin memesan / berminat dengan layanan ${serviceName}. Bisa dibantu informasi lebih lanjut?`;
+        button.setAttribute('href', `https://wa.me/6282249634912?text=${encodeURIComponent(message)}`);
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
