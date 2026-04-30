@@ -25,7 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const orderId =
+      globalThis.crypto?.randomUUID?.() ?? `order_${Date.now().toString(36)}`;
+
     const payload = {
+      id: orderId,
       nama_klien: (namaKlien?.value ?? "").trim(),
       jenis_layanan: (jenisLayanan?.value ?? "").trim(),
       brief_singkat: (briefSingkat?.value ?? "").trim(),
@@ -37,15 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (!payload.brief_singkat) payload.brief_singkat = null;
+
     submitBtn?.setAttribute("disabled", "disabled");
     setStatus(statusEl, "Mengirim order...", "loading");
 
     try {
-      const { data, error } = await supabase
-        .from("orders")
-        .insert([payload])
-        .select("id")
-        .single();
+      // Catatan:
+      // Jangan pakai `.select().single()` setelah insert kalau RLS Anda hanya mengizinkan INSERT untuk anon
+      // (tanpa policy SELECT untuk anon). Itu bisa membuat response kosong dan dianggap error.
+      const { error } = await supabase.from("orders").insert(payload);
 
       if (error) throw error;
 
@@ -56,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         `Saya sudah submit order: ${payload.jenis_layanan}.`,
         payload.brief_singkat ? `Brief singkat: ${payload.brief_singkat}` : null,
         `Kontak WA saya: ${payload.kontak_wa}`,
-        data?.id ? `Order ID: ${data.id}` : null,
+        payload.id ? `Order ID: ${payload.id}` : null,
       ]
         .filter(Boolean)
         .join("\n");
