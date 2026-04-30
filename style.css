@@ -1151,6 +1151,14 @@ section {
         padding-bottom: 0;
     }
 
+    section {
+        padding: 3.5rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
     .nav-content {
         padding: 0.9rem 1.2rem;
         flex-wrap: wrap;
@@ -1232,13 +1240,107 @@ section {
     .testimonial-card,
     .case-card,
     .why-us-content,
-    .cta-box {
-        padding-left: 1.4rem;
-        padding-right: 1.4rem;
+    .cta-box,
+    .order-card,
+    .admin-card {
+        padding: 1.25rem;
     }
 
     .trust-item {
-        min-height: 180px;
+        min-height: 148px;
+        padding: 1.25rem 1rem;
+    }
+
+    .service-card {
+        gap: 0.8rem;
+    }
+
+    .service-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .pricing-grid,
+    .process-steps,
+    .testimonials-grid {
+        gap: 1rem;
+    }
+
+    .pricing-card.featured {
+        transform: none;
+    }
+
+    .pricing-description,
+    .price-features {
+        margin-bottom: 1.2rem;
+    }
+
+    .comparison-section {
+        margin-top: 2.25rem;
+    }
+
+    .comparison-placeholder {
+        height: 250px;
+    }
+
+    .case-card,
+    .why-us-content {
+        gap: 1.25rem;
+    }
+
+    .stat-circle {
+        width: 176px;
+        height: 176px;
+        border-width: 8px;
+    }
+
+    .stat-circle .number {
+        font-size: 2.7rem;
+    }
+
+    .step {
+        text-align: left;
+    }
+
+    .step-num {
+        width: 54px;
+        height: 54px;
+        margin: 0 0 0.9rem;
+    }
+
+    .testimonial-card p,
+    .cta-box p {
+        margin-bottom: 1rem;
+    }
+
+    .order-section,
+    .admin-section {
+        padding-top: 4.5rem;
+    }
+
+    .order-form input,
+    .order-form select,
+    .order-form textarea,
+    .admin-form input,
+    .admin-form select {
+        padding: 0.82rem 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .order-form select,
+    .admin-form select {
+        padding-right: 2.8rem;
+        background-position: 0 0, calc(100% - 0.9rem) 50%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .form-actions .btn {
+        width: 100%;
     }
 
     .floating-wa {
@@ -1248,6 +1350,76 @@ section {
 
     .wa-tooltip {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.85rem;
+    }
+
+    .nav-content {
+        padding: 0.85rem 0.95rem;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding: 7rem 0 4.25rem;
+    }
+
+    h2 {
+        font-size: clamp(1.7rem, 8vw, 2.1rem);
+    }
+
+    .hero-text p,
+    .section-header p,
+    .service-card p,
+    .pricing-description,
+    .price-features li,
+    .form-field span,
+    .form-hint {
+        font-size: 0.9rem;
+    }
+
+    .service-card,
+    .pricing-card,
+    .step,
+    .testimonial-card,
+    .case-card,
+    .why-us-content,
+    .cta-box,
+    .order-card,
+    .admin-card {
+        padding: 1rem;
+    }
+
+    .service-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .price span {
+        font-size: 1.9rem;
+    }
+
+    .comparison-placeholder {
+        height: 220px;
+    }
+
+    .stat-circle {
+        width: 154px;
+        height: 154px;
+    }
+
+    .stat-circle .number {
+        font-size: 2.35rem;
+    }
+
+    .btn,
+    .btn-lg {
+        min-height: 48px;
+        padding: 0.8rem 1.15rem;
+        font-size: 0.82rem;
     }
 }
 
@@ -1300,6 +1472,38 @@ section {
     background: rgba(255, 255, 255, 0.06);
     color: rgba(255, 255, 255, 0.92);
     outline: none;
+}
+
+.order-form select,
+.admin-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='M3 5.25 7 9l4-3.75' fill='none' stroke='rgba(255,255,255,0.86)' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, calc(100% - 1rem) 50%;
+    background-size: auto, 14px;
+    padding-right: 3rem;
+}
+
+.order-form select:invalid {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.order-form select:valid,
+.admin-form select {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.order-form select option,
+.admin-form select option {
+    color: #10223f;
+    background: #ffffff;
+}
+
+.order-form select option[value=""] {
+    color: #6f809a;
 }
 
 .order-form textarea {
