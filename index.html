@@ -38,6 +38,7 @@
                 <a href="#portfolio">Portofolio</a>
                 <a href="#pricing">Harga</a>
                 <a href="#process">Proses</a>
+                <a href="#order">Order</a>
             </nav>
             <div class="nav-cta">
                 <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
@@ -391,6 +392,53 @@
         </section>
 
         <!-- Strong CTA Section -->
+        <section id="order" class="order-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="reveal">Form <span class="gradient-text">Order</span></h2>
+                    <p class="reveal">Isi singkat, setelah submit Anda akan diarahkan ke WhatsApp dengan pesan otomatis.</p>
+                </div>
+
+                <div class="order-card reveal">
+                    <form id="orderForm" class="order-form">
+                        <div class="form-grid">
+                            <label class="form-field">
+                                <span>Nama Klien</span>
+                                <input id="nama_klien" name="nama_klien" type="text" placeholder="Nama Anda" required />
+                            </label>
+
+                            <label class="form-field">
+                                <span>Jenis Layanan</span>
+                                <select id="jenis_layanan" name="jenis_layanan" required>
+                                    <option value="" selected disabled>Pilih layanan</option>
+                                    <option value="Logo">Logo</option>
+                                    <option value="Poster">Poster</option>
+                                    <option value="IG">IG</option>
+                                </select>
+                            </label>
+
+                            <label class="form-field form-field-full">
+                                <span>Brief Singkat</span>
+                                <textarea id="brief_singkat" name="brief_singkat" rows="4"
+                                    placeholder="Contoh: brand saya jualan kopi, ingin gaya minimal, warna navy & gold"></textarea>
+                            </label>
+
+                            <label class="form-field">
+                                <span>Kontak WhatsApp</span>
+                                <input id="kontak_wa" name="kontak_wa" type="tel" placeholder="08xxxxxxxxxx / +62xxxxxxxxxx"
+                                    required />
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button id="orderSubmitBtn" class="btn btn-primary" type="submit">Submit</button>
+                            <p id="orderStatus" class="form-hint" hidden></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="cta">
             <div class="container text-center">
                 <div class="cta-box reveal">
@@ -430,6 +478,7 @@
     </a>
 
     <script src="main.js"></script>
+    <script type="module" src="order.js"></script>
     <script>
         lucide.createIcons();
     </script>

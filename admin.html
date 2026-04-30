@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwichUI Admin | Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="admin-page">
+    <header class="navbar">
+      <div class="container nav-content">
+        <div class="logo">
+          <a class="logo-text" href="index.html">Swich<span class="accent">UI</span></a>
+        </div>
+        <div class="nav-cta">
+          <button id="adminLogoutBtn" class="btn btn-outline" type="button" hidden>
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-section">
+        <div class="container">
+          <div id="adminLoginWrap" class="admin-card glass" hidden>
+            <h2>Admin Login</h2>
+            <p class="admin-subtext">
+              Login Supabase untuk melihat dan mengubah status order.
+            </p>
+
+            <form id="adminLoginForm" class="admin-form">
+              <div class="form-grid">
+                <label class="form-field">
+                  <span>Email</span>
+                  <input id="adminEmail" type="email" autocomplete="email" required />
+                </label>
+                <label class="form-field">
+                  <span>Password</span>
+                  <input
+                    id="adminPassword"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                  />
+                </label>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Login</button>
+                <span id="adminAuthStatus" class="form-hint"></span>
+              </div>
+            </form>
+          </div>
+
+          <div id="adminDashboardWrap" class="admin-card glass" hidden>
+            <div class="admin-head">
+              <h2>Orders Dashboard</h2>
+              <div class="admin-controls">
+                <label class="admin-filter">
+                  <span>Status</span>
+                  <select id="statusFilter">
+                    <option value="all">Semua</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Progress">Progress</option>
+                    <option value="Done">Done</option>
+                  </select>
+                </label>
+                <div id="ordersStatus" class="admin-status-text"></div>
+              </div>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Waktu</th>
+                    <th>Nama</th>
+                    <th>Layanan</th>
+                    <th>Brief</th>
+                    <th>WhatsApp</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>
