@@ -1346,6 +1346,7 @@ section {
 }
 
 @media (max-width: 820px) {
+
     .order-form .form-grid,
     .admin-form .form-grid {
         grid-template-columns: 1fr;
