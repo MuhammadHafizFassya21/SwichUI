@@ -1,92 +1,36 @@
-# Dokumentasi Akhir Proyek Website SwichUI
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Deploy Gratis Milik Sendiri
-Website ini adalah static site biasa, jadi Anda tidak perlu Vercel Pro untuk redeploy. Repo ini sekarang sudah disiapkan agar bisa auto-deploy gratis lewat GitHub Pages setiap kali ada push ke branch `main`.
+## Getting Started
 
-### Opsi yang paling aman: GitHub Pages
-1. Push repo ini ke akun GitHub yang Anda miliki akses penuh.
-2. Buka `Settings > Pages` pada repo tersebut.
-3. Pada bagian `Source`, pilih `GitHub Actions`.
-4. Setelah itu, setiap push ke `main` akan memicu workflow deploy otomatis.
+First, run the development server:
 
-Alamat default-nya akan berbentuk:
-`https://username.github.io/SwichUI/`
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### Kalau tetap mau pakai Vercel gratis
-Vercel Hobby plan masih gratis untuk project personal, termasuk deploy static site. Namun folder `.vercel/` lama di komputer ini terhubung ke project milik akun lain, jadi jangan dipakai lagi. Buat project baru di akun Vercel Anda sendiri, lalu import repo ini sebagai project baru.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Dokumen ini menyajikan kesimpulan lengkap mengenai website **SwichUI**, sebuah landing page premium untuk agensi desain digital yang berfokus pada startup dan UMKM.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 🌟 Ringkasan Proyek
-Website SwichUI dirancang dengan estetika **modern, futuristik, dan profesional**. Menggunakan tema gelap (dark mode) dengan aksen gradien neon (biru & ungu) untuk memberikan kesan agensi digital kelas atas yang inovatif.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## 🛠️ Fitur-Fitur Utama
+To learn more about Next.js, take a look at the following resources:
 
-### 1. Desain & Visual Premium
-- **Tema Gelap (Dark Mode)**: Mengurangi kelelahan mata dan memberikan kesan eksklusif.
-- **Efek Glassmorphism**: Penggunaan kartu transparan dengan efek blur pada latar belakang untuk kedalaman visual.
-- **Gradien Neon**: Perpaduan warna *Neon Blue* dan *Purple* untuk elemen teks dan tombol.
-- **Favicon Kustom**: Menggunakan logo `swichui.png` pada tab browser.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### 2. Animasi & Interaktivitas
-- **Scroll Reveal**: Elemen muncul secara halus saat pengguna menelusuri halaman menggunakan *Intersection Observer API*.
-- **Hover Effects**: Animasi pada kartu layanan dan item portofolio (zoom & overlay).
-- **Smooth Scrolling**: Navigasi antar bagian halaman yang mulus.
-- **Floating Animation**: Elemen mockup di Hero section yang bergerak perlahan untuk kesan dinamis.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### 3. Responsivitas Penuh
-- Website dioptimalkan untuk berbagai ukuran layar (Desktop, Tablet, dan Mobile).
-- **Mobile Menu**: Tombol menu siap pakai untuk perangkat layar kecil.
+## Deploy on Vercel
 
-### 4. Integrasi Kontak Langsung
-- **WhatsApp Redirect**: Klik nomor telepon langsung membuka chat WhatsApp dengan format internasional.
-- **Email Redirect**: Klik alamat email langsung membuka aplikasi email (mailto).
-- **Instagram Integration**: Tautan langsung ke profil Instagram `@swichui`.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-## 📂 Struktur Halaman
-
-| Bagian | Deskripsi Isi |
-| :--- | :--- |
-| **Navbar** | Logo neon, menu navigasi (Beranda, Layanan, Portofolio, Proses), dan tombol CTA "Hubungi Kami". |
-| **Hero** | Headline kuat, sub-headline, tombol aksi utama, dan mockup desain premium. |
-| **Layanan** | 4 pilar bisnis: UI/UX, Logo & Branding, Media Sosial, dan Poster Makanan UMKM. |
-| **Portofolio** | Grid pameran karya pilihan dengan kategori yang jelas. |
-| **Mengapa Kami** | Keunggulan SwichUI (Modern, Cepat, Terjangkau, Profesional) dengan statistik kepuasan. |
-| **Proses** | Alur kerja 3 langkah (Konsultasi, Desain & Revisi, Pengiriman). |
-| **Testimoni** | Ulasan dari klien nyata untuk membangun kepercayaan (*Social Proof*). |
-| **CTA & Footer** | Ajakan terakhir untuk bekerja sama dan informasi kontak lengkap. |
-
----
-
-## ⚙️ Spesifikasi Teknis
-- **Bahasa**: HTML5, CSS3 (Vanilla), JavaScript (ES6+).
-- **Ikon**: [Lucide Icons](https://lucide.dev/) (Ringan dan modern).
-- **Tipografi**: [Google Fonts - Inter](https://fonts.google.com/specimen/Inter) (Bersih dan sangat terbaca).
-- **SEO**: Meta tags lengkap untuk deskripsi dan judul yang ramah mesin pencari.
-
----
-
-## 🚀 Perencanaan Masa Depan (Future Planning)
-Untuk memaksimalkan website ini lebih lanjut, berikut adalah beberapa fitur yang bisa ditambahkan di masa mendatang:
-1. **Dark/Light Mode Toggle**: Memberikan pilihan tema kepada pengguna.
-2. **Galeri Portofolio Dinamis**: Menambahkan filter berdasarkan kategori desain (misal: hanya tampilkan UI/UX).
-3. **Formulir Kontak**: Mengganti tautan langsung dengan formulir yang terintegrasi ke email/database.
-4. **Blog/Artikel**: Untuk meningkatkan SEO melalui konten edukatif seputar desain.
-5. **Multi-bahasa**: Opsi bahasa Inggris untuk menjangkau klien internasional.
-
----
-
-## 📸 Aset Visual
-Aset visual yang digunakan dalam proyek ini meliputi:
-- **Hero Mockup**: `/assets/hero-mockup.png`
-- **Portfolio 1 (UI/UX)**: `/assets/portfolio-1.png`
-- **Portfolio 2 (Branding)**: `/assets/portfolio-2.png`
-- **Portfolio 3 (Social Media)**: `/assets/portfolio-3.png`
-- **Favicon**: `swichui.png`
-
----
-*Dibuat dengan dedikasi untuk kesuksesan brand SwichUI.*
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

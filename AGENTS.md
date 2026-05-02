@@ -1,13 +1,5 @@
-# Frontend Design Skill
+<!-- BEGIN:nextjs-agent-rules -->
+# This is NOT the Next.js you know
 
-Saat mengerjakan UI, frontend, redesign, layout, komponen, styling, responsive design, atau tampilan website, gunakan instruksi dari:
-
-.agent/skills/frontend-design/SKILL.md
-
-Aturan:
-- Fokus pada frontend/UI.
-- Jangan ubah backend, database, API, auth, atau logic bisnis kecuali diminta.
-- Pertahankan semua fitur yang sudah ada.
-- Buat tampilan production-grade, responsive, modern, dan tidak generik.
-- Sebelum coding, jelaskan rencana desain singkat.
-- Setelah coding, jalankan build/lint jika tersedia.
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+<!-- END:nextjs-agent-rules -->
