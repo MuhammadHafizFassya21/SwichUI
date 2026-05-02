@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { TrendingUp, Sparkles, Zap, ShieldCheck } from "lucide-react";
+import { Sparkles, ShieldCheck } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -75,35 +75,6 @@ export default function Hero() {
               priority
             />
           </div>
-
-          {/* Floating Cards */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-6 -right-6 bg-white p-5 rounded-2xl shadow-xl z-20 flex items-center gap-4 border border-blue-50"
-          >
-            <div className="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center">
-              <TrendingUp size={24} />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-widest">Growth</span>
-              <span className="text-sm font-semibold text-slate-900">+40% Conversion</span>
-            </div>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl z-20 flex items-center gap-4 border border-blue-50"
-          >
-            <div className="w-12 h-12 bg-blue-50 text-primary rounded-xl flex items-center justify-center">
-              <Zap size={24} />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] text-slate-400 font-semibold uppercase tracking-widest">Quality</span>
-              <span className="text-sm font-semibold text-slate-900">Premium Design</span>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

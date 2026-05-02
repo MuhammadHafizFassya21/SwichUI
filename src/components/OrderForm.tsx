@@ -80,7 +80,7 @@ export default function OrderForm() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-black mb-8 text-slate-900"
+              className="text-4xl md:text-5xl font-bold mb-8 text-slate-900"
             >
               Mulai Proyek <span className="gradient-text">Sekarang</span>
             </motion.h2>
@@ -104,7 +104,7 @@ export default function OrderForm() {
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
-                  <label className="text-sm font-black text-slate-700 ml-3 uppercase tracking-widest">Nama Lengkap</label>
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Nama Lengkap</label>
                   <input
                     name="nama_klien"
                     type="text"
@@ -112,17 +112,17 @@ export default function OrderForm() {
                     required
                     value={formData.nama_klien}
                     onChange={handleChange}
-                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-bold text-slate-900"
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
                   />
                 </div>
                 <div className="space-y-3">
-                  <label className="text-sm font-black text-slate-700 ml-3 uppercase tracking-widest">Layanan</label>
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Layanan</label>
                   <select
                     name="jenis_layanan"
                     required
                     value={formData.jenis_layanan}
                     onChange={handleChange}
-                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all appearance-none font-bold text-slate-900"
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all appearance-none font-medium text-slate-900"
                   >
                     <option value="" disabled>Pilih kategori desain</option>
                     <option value="Logo & Branding">Logo & Branding</option>
@@ -134,19 +134,19 @@ export default function OrderForm() {
               </div>
 
               <div className="space-y-3">
-                <label className="text-sm font-black text-slate-700 ml-3 uppercase tracking-widest">Brief Singkat</label>
+                <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Brief Singkat</label>
                 <textarea
                   name="brief_singkat"
                   rows={4}
                   placeholder="Ceritakan sedikit tentang brand atau kebutuhan desain Anda..."
                   value={formData.brief_singkat}
                   onChange={handleChange}
-                  className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all resize-none font-bold text-slate-900"
+                  className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all resize-none font-medium text-slate-900"
                 />
               </div>
 
               <div className="space-y-3">
-                <label className="text-sm font-black text-slate-700 ml-3 uppercase tracking-widest">WhatsApp</label>
+                <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">WhatsApp</label>
                 <input
                   name="kontak_wa"
                   type="tel"
@@ -154,7 +154,7 @@ export default function OrderForm() {
                   required
                   value={formData.kontak_wa}
                   onChange={handleChange}
-                  className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-bold text-slate-900"
+                  className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
                 />
               </div>
 
@@ -162,7 +162,7 @@ export default function OrderForm() {
                 <button
                   type="submit"
                   disabled={status.type === "loading"}
-                  className="w-full sm:w-auto cta-gradient text-white px-14 py-5 rounded-2xl font-black shadow-xl btn-shadow transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto cta-gradient text-white px-14 py-5 rounded-2xl font-semibold shadow-xl btn-shadow transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3"
                 >
                   {status.type === "loading" ? "Mengirim..." : (
                     <>
@@ -173,7 +173,7 @@ export default function OrderForm() {
                 </button>
 
                 {status.message && (
-                  <p className={`text-sm font-black ${status.type === "error" ? "text-red-500" : "text-green-600"}`}>
+                  <p className={`text-sm font-semibold ${status.type === "error" ? "text-red-500" : "text-green-600"}`}>
                     {status.message}
                   </p>
                 )}

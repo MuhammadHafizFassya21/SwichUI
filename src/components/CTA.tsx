@@ -18,16 +18,16 @@ export default function CTA() {
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-400/20 rounded-full -mr-32 -mb-32 blur-3xl" />
 
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-black mb-10 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight">
               Siap Bertransformasi <br />
-              <span className="text-white/80 text-3xl md:text-5xl">Secara Visual?</span>
+              <span className="text-white/80 text-2xl md:text-4xl">Secara Visual?</span>
             </h2>
             <p className="text-lg md:text-xl text-white/90 mb-14 font-medium">
               Jangan biarkan desain yang kurang menarik menghambat potensi bisnis Anda. Konsultasikan kebutuhan desain Anda secara GRATIS sekarang juga!
             </p>
             <a
               href="https://wa.me/6282249634912?text=Halo%20SwichUI,%20saya%20tertarik%20dengan%20jasa%20desain%20Anda"
-              className="inline-flex items-center gap-4 bg-white text-primary hover:bg-blue-50 px-12 py-5 rounded-2xl font-black text-xl transition-all hover:scale-105 shadow-xl"
+              className="inline-flex items-center gap-4 bg-[#25D366] text-white hover:bg-[#128C7E] px-12 py-5 rounded-2xl font-semibold text-lg transition-all hover:scale-105 shadow-xl"
             >
               <MessageSquare size={24} />
               <span>Chat via WhatsApp</span>

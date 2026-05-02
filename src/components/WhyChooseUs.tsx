@@ -71,15 +71,11 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full border-[16px] border-white bg-white shadow-premium flex flex-col items-center justify-center text-center overflow-hidden">
-               <div className="absolute inset-0 cta-gradient opacity-10" />
+            <div className="flex flex-col items-center justify-center text-center">
                <div className="relative z-10">
                   <span className="text-7xl md:text-9xl font-black mb-2 tracking-tighter gradient-text">100%</span>
-                  <p className="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-slate-400">Kepuasan Klien</p>
+                  <p className="text-xs md:text-sm font-bold uppercase tracking-[0.3em] text-slate-500">Kepuasan Klien</p>
                </div>
-              
-              <div className="absolute inset-0 border-[2px] border-primary/10 rounded-full animate-[spin_20s_linear_infinite]" />
-              <div className="absolute inset-4 border-[1px] border-dashed border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
             </div>
           </motion.div>
         </div>
