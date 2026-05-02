@@ -6,25 +6,53 @@ import { Check } from "lucide-react";
 export default function Pricing() {
   const plans = [
     {
-      name: "Poster UMKM",
-      price: "50K",
-      features: ["1 Pilihan Desain", "2x Revisi", "File High-Res", "Pengerjaan 2 Hari"],
+      name: "Feed IG Single",
+      price: "35K",
+      features: ["1 Desain Feed IG", "Pilihan Ukuran Square/Portrait", "Format JPG/PNG", "1x Revisi"],
       featured: false,
       delay: 0.1,
     },
     {
-      name: "Logo Design",
-      price: "150K",
-      features: ["2 Konsep Desain", "Revisi Sepuasnya", "Master File (AI/EPS)", "Branding Guideline"],
-      featured: true,
+      name: "Poster Single",
+      price: "50K",
+      features: ["1 Desain Poster", "Siap Cetak (CMYK/RGB)", "File High-Res", "2x Revisi"],
+      featured: false,
       delay: 0.2,
     },
     {
-      name: "UI/UX Design",
-      price: "500K",
-      features: ["Mobile/Desktop View", "Prototype Interaktif", "Aset Siap Developer", "Desain Modern"],
+      name: "Banner Design",
+      price: "75K",
+      features: ["2 Konsep Desain", "Siap Cetak (X-Banner/Y-Banner)", "File High-Res", "Revisi 2x"],
       featured: false,
       delay: 0.3,
+    },
+    {
+      name: "Logo Design",
+      price: "150K",
+      features: ["2 Konsep Desain", "Master File (AI/EPS/PNG)", "Filosofi Logo", "Revisi Sepuasnya"],
+      featured: true,
+      delay: 0.4,
+    },
+    {
+      name: "Carousel 3 Slide",
+      price: "100K",
+      features: ["3 Slide Feed IG", "Desain Berkelanjutan", "Format JPG/PNG", "2x Revisi"],
+      featured: false,
+      delay: 0.5,
+    },
+    {
+      name: "Carousel 5 Slide",
+      price: "150K",
+      features: ["5 Slide Feed IG", "Desain Berkelanjutan", "Format JPG/PNG", "2x Revisi"],
+      featured: false,
+      delay: 0.6,
+    },
+    {
+      name: "UI/UX Design",
+      price: "450K",
+      features: ["Mobile/Desktop Basic", "Interactive Prototype", "Aset Siap Developer", "Desain Modern"],
+      featured: false,
+      delay: 0.7,
     },
   ];
 
@@ -52,7 +80,7 @@ export default function Pricing() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
