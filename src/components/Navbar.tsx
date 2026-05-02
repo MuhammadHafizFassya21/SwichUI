@@ -27,11 +27,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/90 backdrop-blur-md border-b border-blue-100 py-3 shadow-sm"
           : "bg-transparent py-6"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="text-2xl font-medium tracking-tighter uppercase text-slate-900">
@@ -68,9 +67,8 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       <div
-        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-blue-100 transition-all duration-300 overflow-hidden shadow-xl ${
-          isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden absolute top-full left-0 w-full bg-white border-b border-blue-100 transition-all duration-300 overflow-hidden shadow-xl ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <nav className="flex flex-col p-8 gap-5">
           {navLinks.map((link) => (

@@ -32,12 +32,12 @@ export default function Footer() {
               Creative agency yang berdedikasi membantu UMKM dan Startup naik kelas melalui desain visual yang estetik, profesional, dan berdaya jual tinggi.
             </p>
             <div className="flex gap-4">
-               <a href="https://www.instagram.com/swichui/" target="_blank" className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                  <Instagram size={20} />
-               </a>
-               <a href="https://wa.me/6282249634912" target="_blank" className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
-                  <Send size={20} />
-               </a>
+              <a href="https://www.instagram.com/swichui/" target="_blank" className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://wa.me/6282249634912" target="_blank" className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors">
+                <Send size={20} />
+              </a>
             </div>
           </div>
 
@@ -55,14 +55,14 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-8 uppercase tracking-widest text-slate-500">Kontak</h4>
             <ul className="space-y-5">
               <li className="text-slate-400 font-medium">
-                 <span className="block text-xs uppercase text-slate-600 mb-1">Email</span>
-                 <a href="mailto:swichui.official@gmail.com" className="hover:text-white transition-colors">
+                <span className="block text-xs uppercase text-slate-600 mb-1">Email</span>
+                <a href="mailto:swichui.official@gmail.com" className="hover:text-white transition-colors">
                   swichui.official@gmail.com
                 </a>
               </li>
               <li className="text-slate-400 font-bold">
-                 <span className="block text-xs uppercase text-slate-600 mb-1">WhatsApp</span>
-                 <a href="https://wa.me/6282249634912" target="_blank" className="hover:text-white transition-colors">
+                <span className="block text-xs uppercase text-slate-600 mb-1">WhatsApp</span>
+                <a href="https://wa.me/6282249634912" target="_blank" className="hover:text-white transition-colors">
                   0822 4963 4912
                 </a>
               </li>
@@ -71,8 +71,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-10 border-t border-slate-800 text-center">
-          <p className="text-sm text-slate-500 font-bold">
-            &copy; {new Date().getFullYear()} SwichUI. Didesain dengan ❤️ untuk UMKM Indonesia.
+          <p className="text-sm text-slate-400 font-medium">
+            &copy; {new Date().getFullYear()} SwichUI. All rights reserved. Creative Design Partner for Growing Brands.
           </p>
         </div>
       </div>

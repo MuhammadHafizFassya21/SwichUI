@@ -29,7 +29,7 @@ export default function Pricing() {
     {
       name: "Logo Design",
       price: "150K",
-      features: ["2 Konsep Desain", "Master File (AI/EPS/PNG)", "Filosofi Logo", "Revisi Sepuasnya"],
+      features: ["2 Konsep Desain", "Master File (AI/EPS/PNG)", "Filosofi Logo", "Revisi 3x"],
       featured: true,
       delay: 0.4,
     },
@@ -80,7 +80,7 @@ export default function Pricing() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -88,32 +88,38 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: plan.delay }}
-              className={`relative p-12 rounded-[3rem] transition-all duration-300 flex flex-col ${
+              className={`relative p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 flex flex-col group ${
                 plan.featured
-                  ? "bg-blue-50 border-2 border-primary shadow-premium scale-105 z-10"
-                  : "bg-slate-50 border border-blue-100 hover:border-blue-200 hover:-translate-y-2"
+                  ? "cta-gradient text-white shadow-2xl shadow-blue-200 scale-[1.05] z-10"
+                  : "bg-white border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:shadow-slate-100"
               }`}
             >
               {plan.featured && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 cta-gradient text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-primary text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg z-20">
                   Paling Populer
                 </div>
               )}
-              <h4 className="text-xl font-black mb-2 text-slate-900">
-                {plan.name}
-              </h4>
-              <div className="flex items-baseline gap-2 mb-10">
-                <span className="text-sm font-bold text-slate-400">Mulai</span>
-                <span className={`text-5xl font-black ${plan.featured ? "text-primary" : "text-slate-900"}`}>
-                  Rp{plan.price}
-                </span>
+              
+              <div className="mb-8">
+                <h4 className={`text-lg font-bold mb-1 transition-colors ${plan.featured ? "text-white" : "text-slate-900"}`}>
+                  {plan.name}
+                </h4>
+                <div className="flex items-baseline gap-1">
+                  <span className={`text-xs font-bold uppercase tracking-wider ${plan.featured ? "text-blue-100" : "text-slate-400"}`}>Mulai</span>
+                  <div className="flex items-start">
+                    <span className={`text-sm font-black mt-1 ${plan.featured ? "text-white" : "text-slate-900"}`}>Rp</span>
+                    <span className={`text-4xl font-black tracking-tight ${plan.featured ? "text-white" : "text-slate-900"}`}>
+                      {plan.price}
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              <ul className="space-y-5 mb-12 flex-grow">
+              <ul className="space-y-4 mb-10 flex-grow">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-4 text-sm font-bold text-slate-600">
-                    <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center ${plan.featured ? "bg-primary text-white" : "bg-blue-100 text-primary"}`}>
-                      <Check size={14} strokeWidth={4} />
+                  <li key={idx} className={`flex items-start gap-3 text-sm font-semibold leading-tight ${plan.featured ? "text-white" : "text-slate-600"}`}>
+                    <div className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center transition-colors ${plan.featured ? "bg-white/20 text-white" : "bg-blue-50 text-primary group-hover:bg-primary group-hover:text-white"}`}>
+                      <Check size={12} strokeWidth={4} />
                     </div>
                     <span>{feature}</span>
                   </li>
@@ -122,10 +128,10 @@ export default function Pricing() {
 
               <a
                 href="https://wa.me/6282249634912"
-                className={`block w-full py-5 rounded-2xl font-black text-center transition-all shadow-md ${
+                className={`block w-full py-4 rounded-xl font-bold text-center transition-all ${
                   plan.featured
-                    ? "cta-gradient text-white hover:scale-[1.02] btn-shadow"
-                    : "bg-white text-primary border border-blue-100 hover:bg-blue-50"
+                    ? "bg-white text-primary shadow-lg hover:bg-blue-50 hover:scale-[1.02] active:scale-95"
+                    : "bg-slate-50 text-slate-700 border border-slate-200 hover:bg-primary hover:text-white hover:border-primary hover:shadow-lg hover:shadow-blue-100 active:scale-95"
                 }`}
               >
                 Pilih Paket
