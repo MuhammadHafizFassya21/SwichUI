@@ -28,14 +28,14 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="section-padding bg-slate-50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-6 md:gap-8">
           <div className="max-w-2xl">
             <span className="section-pill">Portofolio</span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-semibold mb-8 leading-tight text-slate-900"
+              className="text-3xl md:text-5xl font-semibold mb-8 leading-tight text-slate-900"
             >
               Karya <span className="gradient-text">Terbaik Kami</span>
             </motion.h2>
@@ -84,7 +84,7 @@ export default function Portfolio() {
                   </span>
                 </div>
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <h4 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors">{project.title}</h4>
                 <p className="text-slate-500 font-medium text-sm">{project.desc}</p>
               </div>

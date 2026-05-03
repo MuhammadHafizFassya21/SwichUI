@@ -21,9 +21,9 @@ const Instagram = ({ size = 24 }: { size?: number }) => (
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 pt-24 pb-12 text-white">
+    <footer className="bg-slate-900 pt-16 md:pt-24 pb-10 md:pb-12 text-white">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16 mb-16 md:mb-20">
           <div className="md:col-span-2">
             <Link href="/" className="text-3xl font-semibold uppercase tracking-tighter mb-8 block">
               Swich<span className="text-primary">UI</span>

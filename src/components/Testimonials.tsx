@@ -26,7 +26,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black mb-6 text-slate-900"
+            className="text-3xl md:text-5xl font-black mb-6 text-slate-900"
           >
             Suara <span className="gradient-text">Klien Kami</span>
           </motion.h2>
@@ -40,7 +40,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 p-10 md:p-14 rounded-[3rem] relative shadow-sm border border-blue-50 group hover:bg-white hover:shadow-premium transition-all duration-500"
+              className="bg-slate-50 p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] relative shadow-sm border border-blue-50 group hover:bg-white hover:shadow-premium transition-all duration-500"
             >
               <div className="text-primary/10 absolute top-10 right-10 group-hover:text-primary/20 transition-colors">
                 <Quote size={80} />

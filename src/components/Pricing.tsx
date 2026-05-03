@@ -65,7 +65,7 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black mb-8 leading-tight text-slate-900"
+            className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900"
           >
             Desain Profesional, Harga Tetap <span className="gradient-text">Terjangkau</span>
           </motion.h2>
@@ -88,7 +88,7 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: plan.delay }}
-              className={`relative p-8 md:p-10 rounded-[2.5rem] transition-all duration-500 flex flex-col group ${
+              className={`relative p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] transition-all duration-500 flex flex-col group ${
                 plan.featured
                   ? "cta-gradient text-white shadow-2xl shadow-blue-200 scale-[1.05] z-10"
                   : "bg-white border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:shadow-slate-100"
@@ -108,7 +108,7 @@ export default function Pricing() {
                   <span className={`text-xs font-bold uppercase tracking-wider ${plan.featured ? "text-blue-100" : "text-slate-400"}`}>Mulai</span>
                   <div className="flex items-start">
                     <span className={`text-sm font-black mt-1 ${plan.featured ? "text-white" : "text-slate-900"}`}>Rp</span>
-                    <span className={`text-4xl font-black tracking-tight ${plan.featured ? "text-white" : "text-slate-900"}`}>
+                    <span className={`text-3xl md:text-4xl font-black tracking-tight ${plan.featured ? "text-white" : "text-slate-900"}`}>
                       {plan.price}
                     </span>
                   </div>

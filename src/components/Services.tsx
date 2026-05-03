@@ -40,7 +40,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-semibold mb-8 leading-tight text-slate-900"
+            className="text-3xl md:text-5xl font-semibold mb-8 leading-tight text-slate-900"
           >
             Solusi Desain <span className="gradient-text">Profesional</span>
           </motion.h2>
@@ -63,7 +63,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: service.delay }}
-              className="group p-8 rounded-[3rem] bg-white border border-blue-50 shadow-sm hover:border-primary/20 hover:shadow-premium transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center"
+              className="group p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-white border border-blue-50 shadow-sm hover:border-primary/20 hover:shadow-premium transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center"
             >
               <div className="w-full aspect-video rounded-2xl overflow-hidden mb-8 bg-slate-100 relative group-hover:shadow-lg transition-all duration-500">
                 <Image 

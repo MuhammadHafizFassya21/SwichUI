@@ -80,7 +80,7 @@ export default function OrderForm() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold mb-8 text-slate-900"
+              className="text-3xl md:text-5xl font-bold mb-8 text-slate-900"
             >
               Mulai Proyek <span className="gradient-text">Sekarang</span>
             </motion.h2>
@@ -99,7 +99,7 @@ export default function OrderForm() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white border border-blue-50 p-10 md:p-16 rounded-[4rem] shadow-premium"
+            className="bg-white border border-blue-50 p-6 md:p-16 rounded-[2.5rem] md:rounded-[4rem] shadow-premium"
           >
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -158,11 +158,11 @@ export default function OrderForm() {
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-8 pt-6">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 pt-6">
                 <button
                   type="submit"
                   disabled={status.type === "loading"}
-                  className="w-full sm:w-auto cta-gradient text-white px-14 py-5 rounded-2xl font-semibold shadow-xl btn-shadow transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto cta-gradient text-white px-8 md:px-14 py-4 md:py-5 rounded-2xl font-semibold shadow-xl btn-shadow transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3"
                 >
                   {status.type === "loading" ? "Mengirim..." : (
                     <>

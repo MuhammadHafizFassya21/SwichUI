@@ -22,7 +22,7 @@ export default function Comparison() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Before */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -33,7 +33,7 @@ export default function Comparison() {
             <div className="absolute top-6 left-6 z-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
               Sebelum
             </div>
-            <div className="relative aspect-video rounded-[3rem] overflow-hidden border-4 border-slate-100 bg-slate-100 shadow-sm">
+            <div className="relative aspect-video rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-slate-100 bg-slate-100 shadow-sm">
               <Image
                 src="/assets/sebelum.png"
                 alt="Desain Sebelum"
@@ -57,7 +57,7 @@ export default function Comparison() {
             <div className="absolute top-6 left-6 z-20 cta-gradient text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
               Sesudah
             </div>
-            <div className="relative aspect-video rounded-[3rem] overflow-hidden border-8 border-blue-50 bg-white shadow-premium">
+            <div className="relative aspect-video rounded-[2rem] md:rounded-[3rem] overflow-hidden border-8 border-blue-50 bg-white shadow-premium">
               <Image
                 src="/assets/sesudah.png"
                 alt="Desain Sesudah"

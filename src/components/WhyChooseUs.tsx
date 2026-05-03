@@ -30,14 +30,14 @@ export default function WhyChooseUs() {
   return (
     <section className="section-padding bg-white">
       <div className="container mx-auto px-6">
-        <div className="bg-slate-50 rounded-[4rem] p-10 md:p-20 shadow-sm border border-blue-50 grid lg:grid-cols-2 gap-20 items-center">
+        <div className="bg-slate-50 rounded-[4rem] p-6 md:p-20 shadow-sm border border-blue-50 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <span className="section-pill mb-10">Kenapa Kami?</span>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-black mb-16 leading-tight text-slate-900"
+              className="text-3xl md:text-5xl font-black mb-16 leading-tight text-slate-900"
             >
               Partner Desain <br />
               <span className="gradient-text">Pilihan Brand Anda</span>
@@ -73,7 +73,7 @@ export default function WhyChooseUs() {
           >
             <div className="flex flex-col items-center justify-center text-center">
                <div className="relative z-10">
-                  <span className="text-7xl md:text-9xl font-black mb-2 tracking-tighter gradient-text">100%</span>
+                  <span className="text-6xl md:text-9xl font-black mb-2 tracking-tighter gradient-text">100%</span>
                   <p className="text-xs md:text-sm font-bold uppercase tracking-[0.3em] text-slate-500">Kepuasan Klien</p>
                </div>
             </div>

@@ -34,7 +34,7 @@ export default function Process() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black mb-8 leading-tight text-slate-900"
+            className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900"
           >
             Proses Kerja <span className="gradient-text">Rapi & Cepat</span>
           </motion.h2>
@@ -49,7 +49,7 @@ export default function Process() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 relative">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -81,7 +81,7 @@ export default function Process() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-24 flex items-center justify-center gap-4 bg-white border border-blue-50 w-fit mx-auto px-10 py-5 rounded-3xl shadow-sm"
+          className="mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 bg-white border border-blue-50 w-fit mx-auto px-6 py-4 md:px-10 md:py-5 rounded-3xl shadow-sm text-center"
         >
           <Clock className="text-primary" size={24} />
           <span className="text-sm font-black uppercase tracking-widest text-slate-400">
