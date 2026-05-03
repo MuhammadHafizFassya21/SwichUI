@@ -1,32 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layout, Palette, Share2, Utensils } from "lucide-react";
+import Image from "next/image";
 
 export default function Services() {
   const services = [
     {
       title: "UI/UX Design",
       desc: "Desain aplikasi dan website yang intuitif untuk pengalaman pengguna yang maksimal.",
-      icon: <Layout size={28} />,
+      image: "/assets/services/uiux.png",
       delay: 0.1,
     },
     {
       title: "Logo & Branding",
       desc: "Identitas unik yang membangun kepercayaan dan daya tarik brand Anda di mata klien.",
-      icon: <Palette size={28} />,
+      image: "/assets/services/logo.png",
       delay: 0.2,
     },
     {
       title: "Social Media Design",
       desc: "Konten visual Instagram & TikTok yang estetik untuk meningkatkan engagement audiens.",
-      icon: <Share2 size={28} />,
+      image: "/assets/services/social.png",
       delay: 0.3,
     },
     {
       title: "Poster Makanan UMKM",
       desc: "Fotografi & desain poster yang membuat menu makanan Anda terlihat jauh lebih lezat.",
-      icon: <Utensils size={28} />,
+      image: "/assets/services/poster.png",
       delay: 0.4,
     },
   ];
@@ -63,10 +63,16 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: service.delay }}
-              className="group p-10 rounded-[2.5rem] bg-white border border-blue-50 shadow-sm hover:border-primary/20 hover:shadow-premium transition-all duration-300 hover:-translate-y-2"
+              className="group p-8 rounded-[3rem] bg-white border border-blue-50 shadow-sm hover:border-primary/20 hover:shadow-premium transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 rounded-2xl bg-blue-50 text-primary flex items-center justify-center mb-8 group-hover:cta-gradient group-hover:text-white transition-all duration-500">
-                {service.icon}
+              <div className="w-full aspect-video rounded-2xl overflow-hidden mb-8 bg-slate-100 relative group-hover:shadow-lg transition-all duration-500">
+                <Image 
+                  src={service.image} 
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
               </div>
               <h3 className="text-xl font-bold mb-4 text-slate-900 group-hover:text-primary transition-colors">
                 {service.title}

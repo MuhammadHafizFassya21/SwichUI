@@ -67,7 +67,7 @@ export default function Pricing() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-black mb-8 leading-tight text-slate-900"
           >
-            Investasi Desain <span className="gradient-text">Terjangkau</span>
+            Desain Profesional, Harga Tetap <span className="gradient-text">Terjangkau</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}

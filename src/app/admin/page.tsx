@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import { LogOut, Filter, ExternalLink, Clock } from "lucide-react";
+import { useCallback } from "react";
+import { Session } from "@supabase/supabase-js";
 
 type Order = {
   id: string;
@@ -16,7 +18,7 @@ type Order = {
 };
 
 export default function AdminPage() {
-  const [session, setSession] = useState<any>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
   const [orders, setOrders] = useState<Order[]>([]);
   const [statusFilter, setStatusFilter] = useState("all");
@@ -36,24 +38,7 @@ export default function AdminPage() {
     return () => subscription.unsubscribe();
   }, []);
 
-  useEffect(() => {
-    if (session) {
-      fetchOrders();
-      
-      const channel = supabase
-        .channel("admin-orders")
-        .on("postgres_changes", { event: "*", schema: "public", table: "orders" }, () => {
-          fetchOrders();
-        })
-        .subscribe();
-
-      return () => {
-        supabase.removeChannel(channel);
-      };
-    }
-  }, [session, statusFilter]);
-
-  const fetchOrders = async () => {
+  const fetchOrders = useCallback(async () => {
     let query = supabase
       .from("orders")
       .select("*")
@@ -69,7 +54,24 @@ export default function AdminPage() {
     } else {
       setOrders(data || []);
     }
-  };
+  }, [statusFilter]);
+
+  useEffect(() => {
+    if (session) {
+      fetchOrders();
+      
+      const channel = supabase
+        .channel("admin-orders")
+        .on("postgres_changes", { event: "*", schema: "public", table: "orders" }, () => {
+          fetchOrders();
+        })
+        .subscribe();
+
+      return () => {
+        supabase.removeChannel(channel);
+      };
+    }
+  }, [session, fetchOrders]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();

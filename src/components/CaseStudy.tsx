@@ -26,7 +26,7 @@ export default function CaseStudy() {
                 <span className="text-primary">Kedai Kopi X</span>
               </h3>
               <p className="text-slate-500 font-bold italic text-sm">
-                "Meningkatkan engagement pelanggan dengan identitas visual estetik."
+                &quot;Meningkatkan engagement pelanggan dengan identitas visual estetik.&quot;
               </p>
             </div>
             

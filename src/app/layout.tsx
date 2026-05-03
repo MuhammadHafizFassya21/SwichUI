@@ -22,6 +22,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const originalError = console.error;
+                console.error = function(...args) {
+                  if (args[0] && typeof args[0] === 'string' && args[0].includes('Cannot redefine property: ethereum')) return;
+                  originalError.apply(console, args);
+                };
+                window.addEventListener('error', function(event) {
+                  if (event.message && event.message.includes('Cannot redefine property: ethereum')) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                  }
+                }, true);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         {children}
       </body>
