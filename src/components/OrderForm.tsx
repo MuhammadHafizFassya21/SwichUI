@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { Send } from "lucide-react";
@@ -10,14 +10,29 @@ const BUSINESS_WA_NUMBER = "6282249634912";
 export default function OrderForm() {
   const [formData, setFormData] = useState({
     nama_klien: "",
+    nama_brand: "",
     jenis_layanan: "",
-    brief_singkat: "",
+    deadline: "",
     kontak_wa: "",
+    target_audiens: "",
+    brief_singkat: "",
+    referensi_desain: "",
+    file_asset: "",
   });
   const [status, setStatus] = useState<{
     message: string;
     type: "info" | "success" | "error" | "loading" | null;
   }>({ message: "", type: null });
+  
+  useEffect(() => {
+    const handleSelectService = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      setFormData((prev) => ({ ...prev, jenis_layanan: customEvent.detail }));
+    };
+
+    window.addEventListener("select-service", handleSelectService);
+    return () => window.removeEventListener("select-service", handleSelectService);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -48,11 +63,20 @@ export default function OrderForm() {
       setStatus({ message: "Sukses! Membuka WhatsApp...", type: "success" });
 
       const waMessage = [
-        `Halo SwichUI, saya ${payload.nama_klien}.`,
-        `Saya ingin memesan layanan: ${payload.jenis_layanan}.`,
-        payload.brief_singkat ? `Brief: ${payload.brief_singkat}` : null,
-        `Kontak WA: ${payload.kontak_wa}`,
-        `ID Pesanan: ${payload.id}`,
+        `*ORDER BARU - SwichUI*`,
+        `---------------------------`,
+        `👤 *Nama Klien:* ${payload.nama_klien}`,
+        `🏢 *Nama Brand:* ${payload.nama_brand || "-"}`,
+        `🎨 *Layanan:* ${payload.jenis_layanan}`,
+        `📅 *Deadline:* ${payload.deadline || "-"}`,
+        `👥 *Target Audiens:* ${payload.target_audiens || "-"}`,
+        `📱 *WhatsApp:* ${payload.kontak_wa}`,
+        `---------------------------`,
+        `📝 *Brief:* ${payload.brief_singkat || "-"}`,
+        `🔗 *Referensi:* ${payload.referensi_desain || "-"}`,
+        `📂 *Asset:* ${payload.file_asset || "-"}`,
+        `---------------------------`,
+        `🆔 *ID Pesanan:* ${payload.id}`,
       ]
         .filter(Boolean)
         .join("\n");
@@ -116,6 +140,20 @@ export default function OrderForm() {
                   />
                 </div>
                 <div className="space-y-3">
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Nama Brand/Usaha</label>
+                  <input
+                    name="nama_brand"
+                    type="text"
+                    placeholder="Contoh: Kopi Senja"
+                    value={formData.nama_brand}
+                    onChange={handleChange}
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
                   <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Layanan</label>
                   <select
                     name="jenis_layanan"
@@ -134,31 +172,80 @@ export default function OrderForm() {
                     <option value="Banner Design">Banner Design</option>
                   </select>
                 </div>
+                <div className="space-y-3">
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Deadline</label>
+                  <input
+                    name="deadline"
+                    type="text"
+                    placeholder="Contoh: 3 Hari / 1 Minggu"
+                    value={formData.deadline}
+                    onChange={handleChange}
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">WhatsApp</label>
+                  <input
+                    name="kontak_wa"
+                    type="tel"
+                    placeholder="Contoh: 082249634912"
+                    required
+                    value={formData.kontak_wa}
+                    onChange={handleChange}
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Target Audiens</label>
+                  <input
+                    name="target_audiens"
+                    type="text"
+                    placeholder="Contoh: Remaja, Pekerja, dll"
+                    value={formData.target_audiens}
+                    onChange={handleChange}
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
+                  />
+                </div>
               </div>
 
               <div className="space-y-3">
-                <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Brief Singkat</label>
+                <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Brief/Kebutuhan Desain</label>
                 <textarea
                   name="brief_singkat"
                   rows={4}
-                  placeholder="Ceritakan sedikit tentang brand atau kebutuhan desain Anda..."
+                  placeholder="Ceritakan detail kebutuhan desain Anda..."
                   value={formData.brief_singkat}
                   onChange={handleChange}
                   className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all resize-none font-medium text-slate-900"
                 />
               </div>
 
-              <div className="space-y-3">
-                <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">WhatsApp</label>
-                <input
-                  name="kontak_wa"
-                  type="tel"
-                  placeholder="Contoh: 082249634912"
-                  required
-                  value={formData.kontak_wa}
-                  onChange={handleChange}
-                  className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">Referensi Desain</label>
+                  <input
+                    name="referensi_desain"
+                    type="text"
+                    placeholder="Link (Pinterest/Behance) atau deskripsi"
+                    value={formData.referensi_desain}
+                    onChange={handleChange}
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <label className="text-sm font-semibold text-slate-700 ml-3 uppercase tracking-widest">File/Asset (Jika ada)</label>
+                  <input
+                    name="file_asset"
+                    type="text"
+                    placeholder="Link Google Drive/Dropbox"
+                    value={formData.file_asset}
+                    onChange={handleChange}
+                    className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 pt-6">

@@ -126,8 +126,11 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href="https://wa.me/6282249634912"
+              <button
+                onClick={() => {
+                  window.dispatchEvent(new CustomEvent("select-service", { detail: plan.name }));
+                  document.getElementById("order")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className={`block w-full py-4 rounded-xl font-bold text-center transition-all ${
                   plan.featured
                     ? "bg-white text-primary shadow-lg hover:bg-blue-50 hover:scale-[1.02] active:scale-95"
@@ -135,7 +138,7 @@ export default function Pricing() {
                 }`}
               >
                 Pilih Paket
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
