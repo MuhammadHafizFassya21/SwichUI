@@ -35,7 +35,16 @@ export default function OrderForm() {
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    // Filter untuk nomor WhatsApp agar hanya angka dan +
+    if (name === "kontak_wa") {
+      const filteredValue = value.replace(/[^0-9+]/g, "");
+      setFormData({ ...formData, [name]: filteredValue });
+      return;
+    }
+
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -49,34 +58,43 @@ export default function OrderForm() {
     const orderId = globalThis.crypto?.randomUUID?.() ?? `order_${Date.now().toString(36)}`;
 
     const payload = {
-      id: orderId,
-      ...formData,
+      nama_klien: formData.nama_klien,
+      nama_brand: formData.nama_brand,
+      jenis_layanan: formData.jenis_layanan,
+      deadline: formData.deadline,
+      kontak_wa: formData.kontak_wa,
+      target_audiens: formData.target_audiens,
       brief_singkat: formData.brief_singkat.trim() || null,
+      referensi_desain: formData.referensi_desain,
+      file_asset: formData.file_asset,
+      status: "Pending",
     };
 
     setStatus({ message: "Memproses pesanan...", type: "loading" });
 
     try {
       const { error } = await supabase.from("orders").insert(payload);
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase error:", error);
+        throw new Error(error.message || "Gagal menyimpan ke database");
+      }
 
       setStatus({ message: "Sukses! Membuka WhatsApp...", type: "success" });
 
       const waMessage = [
         `*ORDER BARU - SwichUI*`,
         `---------------------------`,
-        `👤 *Nama Klien:* ${payload.nama_klien}`,
-        `🏢 *Nama Brand:* ${payload.nama_brand || "-"}`,
-        `🎨 *Layanan:* ${payload.jenis_layanan}`,
-        `📅 *Deadline:* ${payload.deadline || "-"}`,
-        `👥 *Target Audiens:* ${payload.target_audiens || "-"}`,
-        `📱 *WhatsApp:* ${payload.kontak_wa}`,
+        `*Nama Klien:* ${formData.nama_klien}`,
+        `*Nama Brand:* ${formData.nama_brand || "-"}`,
+        `*Layanan:* ${formData.jenis_layanan}`,
+        `*Deadline:* ${formData.deadline || "-"}`,
+        `*Target Audiens:* ${formData.target_audiens || "-"}`,
+        `*WhatsApp:* ${formData.kontak_wa}`,
         `---------------------------`,
-        `📝 *Brief:* ${payload.brief_singkat || "-"}`,
-        `🔗 *Referensi:* ${payload.referensi_desain || "-"}`,
-        `📂 *Asset:* ${payload.file_asset || "-"}`,
+        `*Brief:* ${formData.brief_singkat || "-"}`,
+        `*Referensi:* ${formData.referensi_desain || "-"}`,
+        `*Asset:* ${formData.file_asset || "-"}`,
         `---------------------------`,
-        `🆔 *ID Pesanan:* ${payload.id}`,
       ]
         .filter(Boolean)
         .join("\n");
@@ -85,10 +103,10 @@ export default function OrderForm() {
       setTimeout(() => {
          window.location.assign(url);
       }, 1000);
-    } catch (err) {
-      console.error(err);
+    } catch (err: any) {
+      console.error("Submission error:", err);
       setStatus({
-        message: "Maaf, terjadi kendala. Silakan coba lagi nanti.",
+        message: err.message || "Maaf, terjadi kendala. Silakan coba lagi nanti.",
         type: "error",
       });
     }
@@ -193,6 +211,10 @@ export default function OrderForm() {
                     type="tel"
                     placeholder="Contoh: 082249634912"
                     required
+                    minLength={10}
+                    maxLength={15}
+                    pattern="[0-9+]*"
+                    title="Masukkan nomor WhatsApp yang valid (10-15 digit)"
                     value={formData.kontak_wa}
                     onChange={handleChange}
                     className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all font-medium text-slate-900"
