@@ -125,10 +125,13 @@ export default function OrderForm() {
                     className="w-full px-8 py-5 rounded-2xl bg-slate-50 border border-blue-100 focus:border-primary focus:bg-white outline-none transition-all appearance-none font-medium text-slate-900"
                   >
                     <option value="" disabled>Pilih kategori desain</option>
-                    <option value="Logo & Branding">Logo & Branding</option>
-                    <option value="Poster UMKM">Poster UMKM</option>
-                    <option value="Social Media Design">Social Media Design</option>
+                    <option value="Logo Design">Logo Design</option>
                     <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Feed IG Single">Feed IG Single</option>
+                    <option value="Carousel 3 Slide">Carousel 3 Slide</option>
+                    <option value="Carousel 5 Slide">Carousel 5 Slide</option>
+                    <option value="Poster Single">Poster Single</option>
+                    <option value="Banner Design">Banner Design</option>
                   </select>
                 </div>
               </div>
