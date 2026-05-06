@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Zap, DollarSign, Users } from "lucide-react";
+import { revealIn, revealSequence } from "@/lib/motion";
 
 export default function WhyChooseUs() {
   const reasons = [
@@ -33,12 +34,7 @@ export default function WhyChooseUs() {
         <div className="bg-slate-50 rounded-[4rem] p-6 md:p-20 shadow-sm border border-blue-50 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <span className="section-pill mb-10">Kenapa Kami?</span>
-            <motion.h2
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-black mb-16 leading-tight text-slate-900"
-            >
+            <motion.h2 {...revealIn("left")} className="text-3xl md:text-5xl font-black mb-16 leading-tight text-slate-900">
               Partner Desain <br />
               <span className="gradient-text">Pilihan Brand Anda</span>
             </motion.h2>
@@ -47,10 +43,7 @@ export default function WhyChooseUs() {
               {reasons.map((reason, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  {...revealSequence(index, 0.1)}
                   className="flex gap-8"
                 >
                   <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-white text-primary flex items-center justify-center shadow-sm border border-blue-100">
@@ -65,12 +58,7 @@ export default function WhyChooseUs() {
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
+          <motion.div {...revealIn("right", 0.12)} className="flex justify-center">
             <div className="flex flex-col items-center justify-center text-center">
                <div className="relative z-10">
                   <span className="text-6xl md:text-9xl font-black mb-2 tracking-tighter gradient-text">100%</span>

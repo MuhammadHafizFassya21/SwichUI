@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Quote, Star } from "lucide-react";
+import { revealIn, revealSequence } from "@/lib/motion";
 
 export default function Testimonials() {
   const reviews = [
@@ -22,12 +23,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center mb-16 md:mb-24">
           <span className="section-pill">Testimoni</span>
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black mb-6 text-slate-900"
-          >
+          <motion.h2 {...revealIn("right")} className="text-3xl md:text-5xl font-black mb-6 text-slate-900">
             Suara <span className="gradient-text">Klien Kami</span>
           </motion.h2>
         </div>
@@ -36,10 +32,7 @@ export default function Testimonials() {
           {reviews.map((review, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              {...revealSequence(index, 0.12)}
               className="bg-slate-50 p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] relative shadow-sm border border-blue-50 group hover:bg-white hover:shadow-premium transition-all duration-500"
             >
               <div className="text-primary/10 absolute top-10 right-10 group-hover:text-primary/20 transition-colors">

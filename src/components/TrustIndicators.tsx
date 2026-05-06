@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { revealSequence } from "@/lib/motion";
 
 export default function TrustIndicators() {
   const stats = [
@@ -16,10 +17,7 @@ export default function TrustIndicators() {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              {...revealSequence(index, 0.12)}
               className="text-center"
             >
               <div className="text-4xl md:text-5xl font-bold mb-2 tracking-tighter">

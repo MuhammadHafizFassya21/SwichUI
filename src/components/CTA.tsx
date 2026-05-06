@@ -2,15 +2,14 @@
 
 import { motion } from "framer-motion";
 import { MessageSquare } from "lucide-react";
+import { revealIn } from "@/lib/motion";
 
 export default function CTA() {
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          {...revealIn("up")}
           className="cta-gradient rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl btn-shadow"
         >
           {/* Decorative background elements */}

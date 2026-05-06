@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { revealIn, revealSequence } from "@/lib/motion";
 
 export default function Pricing() {
   const plans = [
@@ -61,21 +62,10 @@ export default function Pricing() {
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center mb-16 md:mb-24">
           <span className="section-pill">Paket Harga</span>
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900"
-          >
+          <motion.h2 {...revealIn("right")} className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">
             Desain Profesional, Harga Tetap <span className="gradient-text">Terjangkau</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-slate-500 text-lg font-medium"
-          >
+          <motion.p {...revealIn("left", 0.08)} className="text-slate-500 text-lg font-medium">
             Kualitas desain premium yang dirancang khusus untuk budget UMKM & Startup.
           </motion.p>
         </div>
@@ -84,10 +74,7 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: plan.delay }}
+              {...revealSequence(index, 0.08)}
               className={`relative p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] transition-all duration-500 flex flex-col group ${
                 plan.featured
                   ? "cta-gradient text-white shadow-2xl shadow-blue-200 scale-[1.05] z-10"

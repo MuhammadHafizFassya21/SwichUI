@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { revealIn, revealSequence } from "@/lib/motion";
 
 export default function Portfolio() {
   const projects = [
@@ -32,28 +33,19 @@ export default function Portfolio() {
           <div className="max-w-2xl">
             <span className="section-pill">Portofolio</span>
             <motion.h2
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              {...revealIn("left")}
               className="text-3xl md:text-5xl font-semibold mb-8 leading-tight text-slate-900"
             >
               Karya <span className="gradient-text">Terbaik Kami</span>
             </motion.h2>
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              {...revealIn("up", 0.08)}
               className="text-slate-500 text-lg font-medium"
             >
               Hasil nyata transformasi brand yang membantu klien tampil lebih meyakinkan.
             </motion.p>
           </div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div {...revealIn("right", 0.12)}>
              <a href="https://www.instagram.com/swichui/" target="_blank" className="cta-gradient text-white px-8 py-3.5 rounded-xl text-sm font-semibold shadow-lg btn-shadow transition-all inline-block">
                Cek Instagram →
              </a>
@@ -64,10 +56,7 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              {...revealSequence(index, 0.1)}
               className="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-blue-50 transition-all hover:shadow-premium duration-500"
             >
               <div className="relative aspect-[4/5] overflow-hidden">

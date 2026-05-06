@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Clock, CheckCircle2 } from "lucide-react";
+import { revealIn, revealSequence } from "@/lib/motion";
 
 export default function Process() {
   const steps = [
@@ -30,21 +31,10 @@ export default function Process() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center mb-16 md:mb-24">
           <span className="section-pill">Cara Kerja</span>
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900"
-          >
+          <motion.h2 {...revealIn("left")} className="text-3xl md:text-5xl font-black mb-8 leading-tight text-slate-900">
             Proses Kerja <span className="gradient-text">Rapi & Cepat</span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-slate-500 text-lg font-medium"
-          >
+          <motion.p {...revealIn("right", 0.08)} className="text-slate-500 text-lg font-medium">
             Langkah mudah untuk mendapatkan hasil desain yang profesional dan berdampak.
           </motion.p>
         </div>
@@ -53,10 +43,7 @@ export default function Process() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              {...revealSequence(index, 0.1)}
               className="text-center relative group"
             >
               <div className="w-24 h-24 rounded-3xl bg-white border border-blue-100 flex items-center justify-center text-3xl font-black mx-auto mb-10 shadow-sm group-hover:border-primary group-hover:text-primary transition-all duration-500 relative z-10">
@@ -78,9 +65,7 @@ export default function Process() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          {...revealIn("up", 0.12)}
           className="mt-16 md:mt-24 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 bg-white border border-blue-50 w-fit mx-auto px-6 py-4 md:px-10 md:py-5 rounded-3xl shadow-sm text-center"
         >
           <Clock className="text-primary" size={24} />

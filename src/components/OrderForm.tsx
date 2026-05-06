@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { supabase } from "@/lib/supabase";
 import { Send } from "lucide-react";
+import { revealIn } from "@/lib/motion";
 
 const BUSINESS_WA_NUMBER = "6282249634912";
 
@@ -55,8 +56,6 @@ export default function OrderForm() {
       return;
     }
 
-    const orderId = globalThis.crypto?.randomUUID?.() ?? `order_${Date.now().toString(36)}`;
-
     const payload = {
       nama_klien: formData.nama_klien,
       nama_brand: formData.nama_brand,
@@ -103,10 +102,13 @@ export default function OrderForm() {
       setTimeout(() => {
          window.location.assign(url);
       }, 1000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Submission error:", err);
+      const message = err instanceof Error
+        ? err.message
+        : "Maaf, terjadi kendala. Silakan coba lagi nanti.";
       setStatus({
-        message: err.message || "Maaf, terjadi kendala. Silakan coba lagi nanti.",
+        message,
         type: "error",
       });
     }
@@ -118,29 +120,16 @@ export default function OrderForm() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 md:mb-20">
             <span className="section-pill">Form Order</span>
-            <motion.h2
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-5xl font-bold mb-8 text-slate-900"
-            >
+            <motion.h2 {...revealIn("left")} className="text-3xl md:text-5xl font-bold mb-8 text-slate-900">
               Mulai Proyek <span className="gradient-text">Sekarang</span>
             </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-slate-500 text-lg font-medium"
-            >
+            <motion.p {...revealIn("right", 0.08)} className="text-slate-500 text-lg font-medium">
               Lengkapi form di bawah, kami akan segera merespons melalui WhatsApp.
             </motion.p>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            {...revealIn("up", 0.12)}
             className="bg-white border border-blue-50 p-6 md:p-16 rounded-[2.5rem] md:rounded-[4rem] shadow-premium"
           >
             <form onSubmit={handleSubmit} className="space-y-8">
