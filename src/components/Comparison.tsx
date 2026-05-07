@@ -33,13 +33,13 @@ export default function Comparison() {
             <div className="absolute top-6 left-6 z-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
               Sebelum
             </div>
-            <div className="relative aspect-video rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-slate-100 bg-slate-100 shadow-sm">
+            <div className="relative aspect-[4/3] rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 border-slate-100 bg-white shadow-sm">
               <Image
-                src="/assets/sebelum.png"
+                src="/assets/sebelumupdate.jpeg"
                 alt="Desain Sebelum"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                className="object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500"
               />
             </div>
             <div className="mt-6 text-center">
@@ -57,13 +57,13 @@ export default function Comparison() {
             <div className="absolute top-6 left-6 z-20 cta-gradient text-white text-[10px] font-black uppercase tracking-[0.2em] px-6 py-2 rounded-full shadow-lg">
               Sesudah
             </div>
-            <div className="relative aspect-video rounded-[2rem] md:rounded-[3rem] overflow-hidden border-8 border-blue-50 bg-white shadow-premium">
+            <div className="relative aspect-[4/3] rounded-[2rem] md:rounded-[3rem] overflow-hidden border-8 border-blue-50 bg-white shadow-premium">
               <Image
-                src="/assets/sesudah.png"
+                src="/assets/sesudahupdate.jpeg"
                 alt="Desain Sesudah"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform group-hover:scale-105 duration-700"
+                className="object-contain transition-transform group-hover:scale-105 duration-700"
               />
             </div>
             <div className="mt-6 text-center">

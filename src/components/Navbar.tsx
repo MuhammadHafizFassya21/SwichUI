@@ -49,7 +49,8 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#order"
+            href="https://wa.me/6282249634912?text=Halo%20SwichUI,%20saya%20tertarik%20dengan%20jasa%20desain%20Anda"
+            target="_blank"
             className="cta-gradient text-white px-7 py-2.5 rounded-xl text-sm font-medium shadow-lg btn-shadow transition-all hover:scale-105 active:scale-95"
           >
             Konsultasi Gratis
@@ -82,7 +83,8 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#order"
+            href="https://wa.me/6282249634912?text=Halo%20SwichUI,%20saya%20tertarik%20dengan%20jasa%20desain%20Anda"
+            target="_blank"
             className="cta-gradient text-white text-center py-4 rounded-2xl font-medium mt-2 shadow-lg"
             onClick={() => setIsMenuOpen(false)}
           >
