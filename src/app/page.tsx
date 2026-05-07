@@ -8,6 +8,7 @@ import Comparison from "@/components/Comparison";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import OrderForm from "@/components/OrderForm";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -26,6 +27,7 @@ export default function Home() {
       <WhyChooseUs />
       <Process />
       <Testimonials />
+      <FAQ />
       <OrderForm />
       <CTA />
       <Footer />

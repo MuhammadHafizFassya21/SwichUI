@@ -22,6 +22,7 @@ export default function Navbar() {
     { name: "Portofolio", href: "#portfolio" },
     { name: "Harga", href: "#pricing" },
     { name: "Proses", href: "#process" },
+    { name: "FAQ", href: "#faq" },
     { name: "Order", href: "#order" },
   ];
 
